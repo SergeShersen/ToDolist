@@ -1,14 +1,13 @@
 import { ChangeEvent, KeyboardEvent, useState } from "react";
-import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import AddBoxIcon from '@mui/icons-material/AddBox'
-import IconButton from '@mui/material/IconButton'
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import IconButton from "@mui/material/IconButton";
 
-type PropsType = {
+type Props = {
   addItem: (title: string) => void;
 };
 
-export const AddItemForm = ({ addItem }: PropsType) => {
+export const AddItemForm = ({ addItem }: Props) => {
   const [title, setTitle] = useState("");
   const [error, setError] = useState<string | null>(null);
 
@@ -44,7 +43,7 @@ export const AddItemForm = ({ addItem }: PropsType) => {
         onChange={changeItemHandler}
         onKeyUp={addItemOnKeyUpHandler}
       />
-      <IconButton onClick={addItemHandler} color={'primary'}>
+      <IconButton onClick={addItemHandler} color={"primary"}>
         <AddBoxIcon />
       </IconButton>
     </div>
